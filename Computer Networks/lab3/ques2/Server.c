@@ -2,14 +2,14 @@
 #include<string.h>
 #include<sys/types.h>
 #include<sys/socket.h>
-#include<netinet/in.h>  
+#include<netinet/in.h>
 #include<time.h>
 #define PORTNO 10999
 int main(){
 
 	int sockfd, newsockfd, portno, clilen, n=1;
 	char buf[256],pids[5];
-	
+
 	struct sockaddr_in seraddr, cliaddr;
 	int i, value;
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
