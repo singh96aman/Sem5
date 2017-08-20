@@ -1,0 +1,7 @@
+Every directory has access priviledge
+rwx rwx rwx
+001 0-7 0-7
+Use >> to write to file again
+use 000 will have all privikledge 
+use 400 for read
+use 600 for read and writwe

@@ -1,0 +1,187 @@
+student@lplab-ThinkCentre-M71e:~$ cd Desktop/Aman/lab3/
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ls
+output.txt
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ cat sample1.sh
+cat: sample1.sh: No such file or directory
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ cat >  sample1.sh
+echo "Enter A number:"
+read number
+if [ $number -1t 0 ]
+then 
+echo "negative"
+elif [ $number -eq 0 ]
+then
+echo "zero"
+else
+echo "positive"
+fi
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ chmod a+x sample1.sh
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./sample1.sh
+Enter A number:
+4
+./sample1.sh: line 3: [: -1t: binary operator expected
+positive
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./sample1.sh
+Enter A number:
+-3
+./sample1.sh: line 3: [: -1t: binary operator expected
+positive
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ gedit sample1.sh
+^C
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ chmod a+x sample1.sh
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./sample1.sh
+Enter A number:
+4
+positive
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./sample1.sh
+Enter A number:
+-3
+negative
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ gedit example2.sh
+^C
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ chmod example2.sh
+chmod: missing operand after ‘example2.sh’
+Try 'chmod --help' for more information.
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ chmod a+x example2.sh
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./example2.sh
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./example2.sh 12
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+12
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./example2.sh 12 45 67 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+12
+45
+67
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ gedit example1.sh
+^C
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ chmod a+x example1.sh
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./example1.sh
+menu test program
+1 : print the date
+2,3 : print the current working directory
+4: exit
+
+your choice ?
+1
+
+Tue Aug  8 01:43:16 IST 2017
+1 : print the date
+2,3 : print the current working directory
+4: exit
+
+your choice ?
+2
+
+/home/student/Desktop/Aman/lab3
+1 : print the date
+2,3 : print the current working directory
+4: exit
+
+your choice ?
+3
+
+/home/student/Desktop/Aman/lab3
+1 : print the date
+2,3 : print the current working directory
+4: exit
+
+your choice ?
+4
+
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ gedit sample2.sh
+^[[A^C
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ chomd a+x sample2.sh
+No command 'chomd' found, did you mean:
+ Command 'chmod' from package 'coreutils' (main)
+chomd: command not found
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ chmod a+x sample2.sh
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$ ./sample2.sh
+/bin
+/boot
+/cdrom
+/dev
+/etc
+/home
+/initrd.img
+/initrd.img.old
+/lib
+/lib32
+/lib64
+/lost+found
+/media
+/mnt
+/opt
+/proc
+/root
+/run
+/sbin
+/snap
+/srv
+/sys
+/tmp
+/usr
+/var
+/vmlinuz
+/vmlinuz.old
+student@lplab-ThinkCentre-M71e:~/Desktop/Aman/lab3$
