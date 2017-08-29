@@ -2,6 +2,7 @@
 #include<sys/wait.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include<pthread.h>
 
 int findSum(int num1[100], int num2[100], int sum[100], int len1, int len2)
 {
@@ -25,39 +26,34 @@ int copyArray(int first[100], int second[100], int len2)
   return len2;
 }
 
+void *child_thread()
+{
+  printf("\n Inside Different Thread !");
+  int num1[100] = {0};
+  int num2[100] = {1};
+  int sum[100];
+  int len1=1, len2=1, len3, k=1;
+  int sum_total[100]={0};
+
+  for(int i=3; i<=100; i++)
+  {
+    len3 = findSum(num1,num2,sum,len1,len2);
+    int total[100];
+    k = findSum(sum_total,sum,total,k,len3);
+    copyArray(sum_total,total,k);
+    len1=copyArray(num1,num2,len2);
+    len2=copyArray(num2,sum,len3);
+    //printf("\n%d",k);
+  }
+  printf("\n The Sum is : \n");
+  for(int i=k-1; i>=0; i--)
+    printf("%d",sum_total[i]);
+}
+
 int main()
 {
-  int status;
-  pid_t pid;
-  pid = fork();
-  if(pid==-1)
-    printf("\n Error Child is not created !");
-  else if(pid==0)
-  {
-    printf("\n Inside the Child Parent !");
-    int num1[100] = {0};
-    int num2[100] = {1};
-    int sum[100];
-    int len1=1, len2=1, len3, k=1;
-    int sum_total[100]={0};
-
-    for(int i=3; i<=100; i++)
-    {
-      len3 = findSum(num1,num2,sum,len1,len2);
-      int total[100];
-      k = findSum(sum_total,sum,total,k,len3);
-      copyArray(sum_total,total,k);
-      len1=copyArray(num1,num2,len2);
-      len2=copyArray(num2,sum,len3);
-      //printf("\n%d",k);
-    }
-    printf("\n The Sum is : \n");
-    for(int i=k-1; i>=0; i--)
-      printf("%d",sum_total[i]);
-    exit(0);
-  }
-  else{
-    wait(&status);
-    printf("\n Inside the Parent Process !");
-  }
+  pthread_t thread;
+  pthread_create(&thread,0,&child_thread,0);
+  printf("\n In Main Thread");
+  pthread_join(thread,0);
 }
