@@ -11,6 +11,7 @@ typedef struct graph{
 }*Graph;
 
 Graph createGraph(Graph g, int n){
+	g->v=n;
 	g->AdjList = (struct node *) malloc(n*sizeof(struct node *));
 	for(int i=0; i<n ;i++){
 		NODE newnode = (struct node *) malloc(sizeof(struct node *));

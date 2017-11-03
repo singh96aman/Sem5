@@ -12,7 +12,7 @@ void checkbits(int *set, int a, int b, int n){
 	for(i=n-1; i>=0; i--)
 		if((b & 1<<i))
 			printf("%d ",set[i]);
-	printf("\n");
+	printf("\n");	
 }
 
 void PrintPowerSet(int *set,int set_size){
@@ -39,6 +39,6 @@ void PrintPowerSet(int *set,int set_size){
 int main()
 {
 	int set[] = {1,1,1,1,2};
-	PrintPowerSet(set,5);
+	PrintPowerSet(set,4);
 	return 0;
 }

@@ -19,10 +19,11 @@ NODE insert(NODE root, int d){
 		return newnode;
 	}
 
-	if(root->data > d)
-		insert(root->right,d);
+	
+	if(root->data < d)
+		root->right=insert(root->right,d);
 	else
-		insert(root->left,d);
+		root->left=insert(root->left,d);
 	return root;
 }
 
