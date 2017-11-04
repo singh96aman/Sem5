@@ -32,8 +32,17 @@ Graph addEdge(Graph g, int a, int b)
 	Node temp = (struct node *) malloc(sizeof(struct node));
 	temp->data=b;
 	temp->link=NULL;
-	temp->link = g->array[a].head;
-	g->array[a].head=temp; 
+	//temp->link = g->array[a].head;
+	//g->array[a].head=temp; 
+	Node travel=g->array[a];
+	if(travel==NULL)
+		travel=temp;
+	else
+	{
+		while(travel->link)
+			travel=travel->link
+		travel->link=temp;
+	}
 	return g;
 }
 
