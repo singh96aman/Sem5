@@ -29,8 +29,27 @@ do
 done
 
 x=1
+
 until [ $x -gt 3 ]
 do
 	echo x=$x
 	x=`expr $x + 1`
+done
+
+case $1 in [AaBcCc])
+	 echo "Present";;
+	*) echo "Not Present";;
+esac 
+
+X=5
+while [ $X -gt 0 ]
+do	
+	echo "Hello"
+	X=$((X-1))
+done
+
+homedir=`pwd`
+for files in /*
+do
+echo $files
 done

@@ -1,7 +1,7 @@
-#!/bin/bash
+cd ..#!/bin/bash
 echo "Enter Directory"
 read directory
-cd $HOME/directory
+cd $HOME/$directory
 ls -l *.?
 
 cd $HOME

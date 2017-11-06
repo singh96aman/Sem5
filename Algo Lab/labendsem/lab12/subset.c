@@ -53,7 +53,7 @@ void findSumSubSet(int array[], int sum) {
 
 
 int main() {
-        int array[] = {1 ,2 ,5 ,6 ,8};
+        int array[] = {2,8,3,1,5};
          n=5;
         findSumSubSet(array, 9);
     }
